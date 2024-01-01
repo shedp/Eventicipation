@@ -20,6 +20,9 @@ It is a solo full stack application that was build with NextJS and TailwindCSS i
 
 Day 1: Basic UI for navbar and register modal
 Day 2: Connecting to database, adding register and login functionality
+Day 3: Rendering cards and card UI
+Day 4: Major debugging due to corrupt files
+Day 5: Edit and delete functionality
 
 ## Wins & Challenges
 
@@ -28,3 +31,6 @@ Day 2: Connecting to database, adding register and login functionality
 ### Challenges
 
 ## Future
+
+[] Functionality to create repeating events
+[] Hide cards
