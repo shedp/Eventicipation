@@ -5,6 +5,7 @@ import Card from "./components/cards/Cards";
 import { differenceInCalendarDays, parseISO } from "date-fns";
 import getCurrentUser from "./actions/getCurrentUser";
 import DeleteModal from "./components/modals/DeleteModal";
+import EditModal from "./components/modals/editModal";
 
 export default async function Home() {
   const events = await getEvents();
@@ -35,6 +36,7 @@ export default async function Home() {
                   currentUser={currentUser}
                 />
                 <DeleteModal id={event.id} />
+                <EditModal event={event} />
               </>
             );
           })}
