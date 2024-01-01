@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
           <UserMenu currentUser={currentUser} />
         </div>
         <div className="flex justify-end min-w-10 mr-4">
-          <Actions />
+          <Actions currentUser={currentUser} />
         </div>
       </header>
     </Container>

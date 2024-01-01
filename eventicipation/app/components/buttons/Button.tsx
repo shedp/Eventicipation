@@ -11,9 +11,10 @@ import {
 interface ButtonProps {
   type: string;
   onClick?: () => void;
+  id?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ type, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ type, onClick, id }) => {
   switch (type) {
     case "add":
       return (

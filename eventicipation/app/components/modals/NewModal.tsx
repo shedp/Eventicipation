@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-
 import toast from "react-hot-toast";
 import useNewModal from "@/app/hooks/useNewModal";
 import Modal from "./Modal";
@@ -20,7 +19,7 @@ const NewModal = () => {
   const newModal = useNewModal();
   const [isLoading, setIsLoading] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
-  const [isRepeatable, setIsRepeatable] = useState(false);
+  // const [isRepeatable, setIsRepeatable] = useState(false);
   const currentUser = getCurrentUser();
 
   const selectedCat = getCategories(selectedValue);
@@ -61,15 +60,15 @@ const NewModal = () => {
     setSelectedValue(value);
   };
 
-  const handleCheckboxChange = (e: any) => {
-    setIsRepeatable(!isRepeatable);
-    setCustomValue("repeatable", e.target.checked);
-  };
+  // const handleCheckboxChange = (e: any) => {
+  //   setIsRepeatable(!isRepeatable);
+  //   setCustomValue("repeatable", e.target.checked);
+  // };
 
-  const handlePeriodSelect = (value: any) => {
-    setCustomValue("period", value);
-    setSelectedValue(value);
-  };
+  // const handlePeriodSelect = (value: any) => {
+  //   setCustomValue("period", value);
+  //   setSelectedValue(value);
+  // };
 
   const handleOnClose = () => {
     router.refresh();
@@ -80,8 +79,7 @@ const NewModal = () => {
   // get multiple dates for repeated events
   const onsubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-    setIsRepeatable(false);
-    console.log(data);
+    // setIsRepeatable(false);
 
     axios
       .post("api/events", data)

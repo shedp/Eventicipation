@@ -5,6 +5,7 @@ import React from "react";
 import Button from "../buttons/Button";
 import { SafeUser } from "@/app/types";
 import CardOptions from "./CardOptions";
+import useShowOptions from "@/app/hooks/showOptions";
 
 interface CardProps {
   id: string;
@@ -14,7 +15,7 @@ interface CardProps {
   category: string;
   description?: string;
   userId?: string;
-  currentUser?: SafeUser;
+  currentUser: SafeUser | null;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -27,6 +28,7 @@ const Card: React.FC<CardProps> = ({
   currentUser,
 }) => {
   const image = getCategories(category)?.image || "";
+  const showOptions = useShowOptions();
 
   return (
     <div>
@@ -56,7 +58,11 @@ const Card: React.FC<CardProps> = ({
         </div>
       </div>
       <div className="h-[4rem]">
-        {userId == currentUser?.id ? <CardOptions id={id} /> : <></>}
+        {currentUser?.id == userId && showOptions.isOpen ? (
+          <CardOptions id={id} />
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
