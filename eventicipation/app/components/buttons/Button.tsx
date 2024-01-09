@@ -10,7 +10,7 @@ import {
 
 interface ButtonProps {
   type: string;
-  onClick?: () => void;
+  onClick?: any;
   id?: string;
 }
 

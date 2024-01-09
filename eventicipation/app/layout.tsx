@@ -8,7 +8,6 @@ import ToasterProvider from "./providers/toasterProvider";
 import LoginModal from "./components/modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
 import NewModal from "./components/modals/NewModal";
-import DeleteModal from "./components/modals/DeleteModal";
 
 export const metadata: Metadata = {
   title: "Eventicipation",

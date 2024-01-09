@@ -45,7 +45,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             onClick={toggleOpen}
             className="cursor-pointer border-b b-6 border-transparent hover:border-yellow-500 pb-3 w-full text-center"
           >
-            Hello
+            Hello, stranger
           </div>
           {menuOpen && (
             <div

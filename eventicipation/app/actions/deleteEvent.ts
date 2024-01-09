@@ -1,21 +1,16 @@
 import prisma from "@/app/libs/prismadb";
-import getCurrentUser from "./getCurrentUser";
 
 export default async function deleteEvent(eventId: string) {
   try {
-    const currentUser = await getCurrentUser();
-    if (!currentUser) {
-      return [];
-    }
-
     const deletedEvent = await prisma.events.delete({
       where: {
         id: eventId,
       },
     });
-
+    console.log("Deleted Event:", deletedEvent);
     return deletedEvent;
   } catch (error: any) {
+    console.error("Error deleting event:", error);
     throw new Error(error);
   }
 }

@@ -59,7 +59,7 @@ const Card: React.FC<CardProps> = ({
       </div>
       <div className="h-[4rem]">
         {currentUser?.id == userId && showOptions.isOpen ? (
-          <CardOptions id={id} />
+          <CardOptions id={id} key={id} />
         ) : (
           <></>
         )}

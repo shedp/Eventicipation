@@ -14,7 +14,17 @@ import getCategories from "@/app/actions/getCategories";
 import useEditModal from "@/app/hooks/useNewModal";
 
 interface EditModalProps {
-  event: any;
+  event: {
+    id: string;
+    userId: string;
+    title: string;
+    description: string;
+    category: string;
+    date: string;
+    repeatable: boolean;
+    period: string;
+    createdAt: string;
+  };
 }
 
 const EditModal: React.FC<EditModalProps> = ({ event }) => {
