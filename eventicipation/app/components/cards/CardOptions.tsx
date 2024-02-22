@@ -19,11 +19,13 @@ const CardOptions: React.FC<CardOptionsProps> = ({ id }) => {
   const onDelete = async (deleteId: string) => {
     try {
       // deleteModal.onOpen();
+      console.log(deleteId);
       await deleteEvent(deleteId);
       toast.success("Event deleted!");
       // router.refresh();
       // deleteModal.onClose();
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Error deleting event:", error.message);
       toast.error("Something went wrong");
     }
   };

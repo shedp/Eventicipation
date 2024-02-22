@@ -9,6 +9,9 @@ export default async function getEvents() {
       events = await prisma.events.findMany({
         where: {
           userId: "6592cd221d21dce61841ef81",
+          date: {
+            gte: new Date(),
+          },
         },
         orderBy: {
           date: "asc",
@@ -22,6 +25,9 @@ export default async function getEvents() {
             { userId: currentUser.id },
             { userId: "6592cd221d21dce61841ef81" },
           ],
+          date: {
+            gte: new Date(),
+          },
         },
         orderBy: {
           date: "asc",
