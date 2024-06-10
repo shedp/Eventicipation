@@ -19,7 +19,6 @@ const NewModal = () => {
   const newModal = useNewModal();
   const [isLoading, setIsLoading] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
-  // const [isRepeatable, setIsRepeatable] = useState(false);
   const currentUser = getCurrentUser();
 
   const selectedCat = getCategories(selectedValue);
@@ -59,16 +58,6 @@ const NewModal = () => {
     setCustomValue("category", value);
     setSelectedValue(value);
   };
-
-  // const handleCheckboxChange = (e: any) => {
-  //   setIsRepeatable(!isRepeatable);
-  //   setCustomValue("repeatable", e.target.checked);
-  // };
-
-  // const handlePeriodSelect = (value: any) => {
-  //   setCustomValue("period", value);
-  //   setSelectedValue(value);
-  // };
 
   const handleOnClose = () => {
     router.refresh();
@@ -135,28 +124,6 @@ const NewModal = () => {
         errors={errors}
         placeholder={selectedCat ? selectedCat.description : ""}
       />
-      {/* 
-      <Checkbox
-        label="Repeatable?"
-        options={["Yes"]}
-        onChange={handleCheckboxChange}
-      />
-      <div className="block">
-        <div className={isRepeatable ? `grid grid-cols-2 gap-2` : `hidden`}>
-          <Input
-            label="Frequency: "
-            id="frequency"
-            type="number"
-            register={register}
-            errors={errors}
-          />
-          <Dropdown
-            onSelect={handlePeriodSelect}
-            options={["Days", "Weeks", "Months", "Years"]}
-            name="period"
-          />
-        </div>
-      </div> */}
     </div>
   );
 
